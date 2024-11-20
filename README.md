@@ -1,4 +1,4 @@
-# ya_docker_exporter
+# vm_docker_exporter
 
 <p align="center">
   <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/main/images/vm_docker_exporter.png" alt="vm_docker_exporter"/>
@@ -17,6 +17,7 @@ This project provides a **Docker exporter** for **VictoriaMetrics** and **Promet
 
 ## Prerequisites
 
+- ⚠️ **You must use a system user with docker group**
 - **Docker**: Docker must be installed and running.
 - **Prometheus**: To collect and store the metrics.
 - **Python 3.x**: The exporter script is written in Python 3.
@@ -33,20 +34,19 @@ This project provides a **Docker exporter** for **VictoriaMetrics** and **Promet
 
 
     cat <<EOF >> /etc/systemd/system/vm_docker_exporter.service
-    [Unit]
-    Description=Docker Exporter for VictoriaMetrics / Prometheus
-    After=network.target
+[Unit]
+Description=Docker Exporter for VictoriaMetrics / Prometheus
+After=network.target
 
-    [Service]
-    Type=simple
-    ExecStart=/home/docky/vm_docker_exporter/venv/bin/python /home/docky/vm_docker_exporter/main.py
-    Restart=always
-    User=docky
-    Group=docky
-    WorkingDirectory=/usr/local/bin
+[Service]
+Type=simple
+ExecStart=/home/docky/vm_docker_exporter/venv/bin/python /home/docky/vm_docker_exporter/main.py
+Restart=always
+User=docky
+Group=docky
 
-    [Install]
-    WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
     EOF
 
     systemctl daemon-reload
