@@ -1,7 +1,7 @@
 # ya_docker_exporter
 
 <p align="center">
-  <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/main/images/vm_docker_exporter.png" alt="gh-otify"/>
+  <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/main/images/vm_docker_exporter.png" alt="vm_docker_exporter"/>
 </p>
 
 ## Description 
