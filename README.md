@@ -24,7 +24,7 @@ This project provides a **Docker exporter** for **VictoriaMetrics** and **Promet
 
 ## Install
     git clone https://github.com/CultureLinux/vm_docker_exporter.git
-    cd ya_docker_exporter
+    cd vm_docker_exporter
     python -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
