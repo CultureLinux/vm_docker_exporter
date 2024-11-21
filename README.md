@@ -32,8 +32,8 @@ This project provides a **Docker exporter** for **VictoriaMetrics** and **Promet
 
 ## Systemctl
 
-
-    cat <<EOF >> /etc/systemd/system/vm_docker_exporter.service
+```
+cat <<EOF >> /etc/systemd/system/vm_docker_exporter.service
 [Unit]
 Description=Docker Exporter for VictoriaMetrics / Prometheus
 After=network.target
@@ -47,21 +47,26 @@ Group=docky
 
 [Install]
 WantedBy=multi-user.target
-    EOF
+EOF
+```
 
-    systemctl daemon-reload
-    systemctl enable vm_docker_exporter --now
-    systemctl status vm_docker_exporter
-    
+```
+systemctl daemon-reload
+systemctl enable vm_docker_exporter --now
+systemctl status vm_docker_exporter
+```
+
 ## Access 
     http://localhost:9417
 
 ## VictoriaMetrics/Prometheus
     scrape_configs:
     - job_name: 'docker_exporter'
+        scrape_interval: 10s
         static_configs:
         - targets: ['<votre_ip>:9417']
-
+        metrics_path: /        
+    
 ## Grafana dashboard
 
 You can import a prebuild dashboard with the file `grafana_dashboard.json`
