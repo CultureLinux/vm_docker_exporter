@@ -1,7 +1,7 @@
 # vm_docker_exporter
 
 <p align="center">
-  <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/main/images/vm_docker_exporter.png" alt="vm_docker_exporter"/>
+  <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/develop/images/vm_docker_exporter.png" alt="vm_docker_exporter"/>
 </p>
 
 ## Description 
@@ -70,3 +70,7 @@ systemctl status vm_docker_exporter
 ## Grafana dashboard
 
 You can import a prebuild dashboard with the file `grafana_dashboard.json`
+
+<p align="center">
+  <img src="https://github.com/CultureLinux/vm_docker_exporter/blob/develop/images/Grafana.png" alt="vm_docker_exporter"/>
+</p>
